@@ -8,43 +8,29 @@ import static org.junit.Assert.*;
 
 public class DepartmentTest {
 
-    @Before
-    public void setUp() throws Exception {
-    }
 
-    @After
-    public void tearDown() throws Exception {
+    @Test
+    public void DepartmentInstantiatesCorrectly() throws Exception{
+        Department department =setupDepartment();
+        assertTrue(department instanceof Department);
     }
 
     @Test
-    public void getDepartment() {
+    public void Department_instantiatesWithCorrectValues() throws Exception{
+        Department department = setupDepartment();
+        assertEquals("clinics", department.getDepartment());
+        assertEquals("treatments",department.getDescription());
+        assertEquals(2,department.getNumber_employees());
     }
 
     @Test
-    public void setDepartment() {
+    public void setId() throws Exception{
+        Department department = setupDepartment();
+        department.setId(3);
+        assertNotEquals(2,department.getId());
     }
 
-    @Test
-    public void getDescription() {
-    }
-
-    @Test
-    public void setDescription() {
-    }
-
-    @Test
-    public void getNumber_employees() {
-    }
-
-    @Test
-    public void setNumber_employees() {
-    }
-
-    @Test
-    public void getId() {
-    }
-
-    @Test
-    public void setId() {
+    public Department setupDepartment(){
+        return new Department("clinics", "treatments", 2);
     }
 }
