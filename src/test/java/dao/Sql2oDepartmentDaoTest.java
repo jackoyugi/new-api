@@ -61,7 +61,7 @@ public class Sql2oDepartmentDaoTest {
     }
     @Test
     public void  addDepartmentToEmployees() {
-        Department department = setupDep();
+        Department department = setupDepartment();
         departmentDao.add(department);
         Employees employees = new Employees("jane", "nurse", "patient-care","123-Nairobi");
         employeesDao.add(employees);
