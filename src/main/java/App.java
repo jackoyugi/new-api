@@ -33,27 +33,13 @@ public class App {
         Connection conn;
         Gson gson = new Gson();
 
-        String connectingString = "jdbc:postgresql://localhost:5432/newsapi_test";
+        String connectingString = "jdbc:postgresql://localhost:5432/newsapi";
         Sql2o sql2o = new Sql2o(connectingString, "jackoyugi", "00100");
         departmentDao = new Sql2oDepartmentDao(sql2o);
         newsDao = new Sql2oNewsDao(sql2o);
         employeesDao = new Sql2oEmployeesDao(sql2o);
         conn = sql2o.open();
 
-        //post: Add news
-        post("/news/new","application/json",(request, response) -> {
-            News news = gson.fromJson(request.body(), News.class);
-            newsDao.add(news);
-            response.type("application/json");
-            response.status(201);
-            return gson.toJson(news);
-        });
-
-        //get:View All news
-        get("/news","application/json",(request, response) -> {
-            int departmentId = Integer.parseInt(request.params("departmentId"));
-            return gson.toJson(newsDao.getAllNews());
-        });
         //post:Add department
         post("/department/new","application/json",(request, response) -> {
             Department department = gson.fromJson(request.body(), Department.class);
@@ -77,6 +63,20 @@ public class App {
             response.type("application/json");
             response.status(201);
             return gson.toJson(news);
+        });
+        //post: Add news
+        post("/news/new","application/json",(request, response) -> {
+            News news = gson.fromJson(request.body(), News.class);
+            newsDao.add(news);
+            response.type("application/json");
+            response.status(201);
+            return gson.toJson(news);
+        });
+
+        //get:View All news
+        get("/news","application/json",(request, response) -> {
+            int departmentId = Integer.parseInt(request.params("departmentId"));
+            return gson.toJson(newsDao.getAllNews());
         });
 
         //get:View all news for department
