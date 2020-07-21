@@ -36,5 +36,5 @@ https://github.com/jackoyugi/new-api
 
 
 ## Support and contact details
-contact me @ jack@biofit.co.ke.com
+contact me @ jack@biofit.co.ke.
 
