@@ -1,6 +1,6 @@
 
 # News Api.
-:satisfied:
+
 #### An Orgnisation API App that gives users  access to news to a department and general news in an organisation.
 #### By **Jack Oyugi**, July 2020;
 ## Description
