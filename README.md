@@ -1,7 +1,7 @@
 
 # News Api.
 
-#### An Orgnisation API App that gives users  access to news to a department and general news in an organisation.
+#### An Orgnisation API that gives users  access to news to a department and general news in an organisation.
 #### By **Jack Oyugi**, July 2020;
 ## Description
 
@@ -12,6 +12,7 @@ Organisational Api that allows a user to query for all the users and the departm
  
 
 * Clone the project into your machine from https://github.com/jackoyugi/news-api.
+* Run the endpoints/restpoints in postman- gradle run and tests in postman*
 
 
 
